@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Centrimeto_a_pulgada">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cm" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Centrimeto_a_pulgadaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Centrimeto_a_pulgadaResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Pulgada_a_centimetro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pul" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Pulgada_a_centimetroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Pulgada_a_centimetroResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Siglo_de_un_año">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="año" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Siglo_de_un_añoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Siglo_de_un_añoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Centrimeto_a_pulgadaSoapIn">
+    <wsdl:part name="parameters" element="tns:Centrimeto_a_pulgada" />
+  </wsdl:message>
+  <wsdl:message name="Centrimeto_a_pulgadaSoapOut">
+    <wsdl:part name="parameters" element="tns:Centrimeto_a_pulgadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Pulgada_a_centimetroSoapIn">
+    <wsdl:part name="parameters" element="tns:Pulgada_a_centimetro" />
+  </wsdl:message>
+  <wsdl:message name="Pulgada_a_centimetroSoapOut">
+    <wsdl:part name="parameters" element="tns:Pulgada_a_centimetroResponse" />
+  </wsdl:message>
+  <wsdl:message name="Siglo_de_un_añoSoapIn">
+    <wsdl:part name="parameters" element="tns:Siglo_de_un_año" />
+  </wsdl:message>
+  <wsdl:message name="Siglo_de_un_añoSoapOut">
+    <wsdl:part name="parameters" element="tns:Siglo_de_un_añoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="serviciosSoap">
+    <wsdl:operation name="Centrimeto_a_pulgada">
+      <wsdl:input message="tns:Centrimeto_a_pulgadaSoapIn" />
+      <wsdl:output message="tns:Centrimeto_a_pulgadaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Pulgada_a_centimetro">
+      <wsdl:input message="tns:Pulgada_a_centimetroSoapIn" />
+      <wsdl:output message="tns:Pulgada_a_centimetroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Siglo_de_un_año">
+      <wsdl:input message="tns:Siglo_de_un_añoSoapIn" />
+      <wsdl:output message="tns:Siglo_de_un_añoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="serviciosSoap" type="tns:serviciosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Centrimeto_a_pulgada">
+      <soap:operation soapAction="http://tempuri.org/Centrimeto_a_pulgada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pulgada_a_centimetro">
+      <soap:operation soapAction="http://tempuri.org/Pulgada_a_centimetro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Siglo_de_un_año">
+      <soap:operation soapAction="http://tempuri.org/Siglo_de_un_año" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serviciosSoap12" type="tns:serviciosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Centrimeto_a_pulgada">
+      <soap12:operation soapAction="http://tempuri.org/Centrimeto_a_pulgada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pulgada_a_centimetro">
+      <soap12:operation soapAction="http://tempuri.org/Pulgada_a_centimetro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Siglo_de_un_año">
+      <soap12:operation soapAction="http://tempuri.org/Siglo_de_un_año" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="servicios">
+    <wsdl:port name="serviciosSoap" binding="tns:serviciosSoap">
+      <soap:address location="http://localhost/servicios_soap/servicios.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serviciosSoap12" binding="tns:serviciosSoap12">
+      <soap12:address location="http://localhost/servicios_soap/servicios.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
